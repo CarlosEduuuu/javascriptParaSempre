@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<body>
+    <h1>Mostrar e Limpar Tabuada</h1>
+
+    <button onclick="criar()">Criar</button><br>
+    <button onclick="limpar()">Limpar</button><br>
+    <div id="output"></div>
+
+
+    <script>
+        const output = document.getElementById("output")
+
+        function criar() {
+            let numero = parseFloat(prompt("Digite o numero da tabuada desejada: "))
+            let msg = ""
+
+            for (let x = 1; x <= 10; x++) {
+                msg += `${x} X ${numero} = ${x * numero} <br> `
+
+            }
+            output.innerHTML = msg
+
+        }
+
+        function limpar() {
+           
+            output.innerHTML =" Vovê apagou!"
+        }
+
+    </script>
+
+</body>
+
+</html>
