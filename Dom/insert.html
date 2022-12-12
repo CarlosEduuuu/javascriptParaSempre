@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert</title>
+    <style>
+
+        .conteiner{
+          
+            border: 5px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- beforebegin -->
+    <div class="conteiner">
+        <!-- afterbegin -->
+
+        <p>paragrafo 1 </p>
+        <p>paragrafo 2 </p>
+        <p>paragrafo 3 </p>
+        <p>paragrafo 4 </p>
+
+        <!-- beforeend -->
+    </div>
+    <!-- afterend -->
+
+<script>
+    //inserção no documento
+    //nesse caso insere texto interpretendo as tags do html
+    const conteiner = document.querySelector(".conteiner")
+    conteiner.insertAdjacentHTML("beforebegin" , " <b>texto inserido com beforebegin </br>")
+    conteiner.insertAdjacentHTML("afterbegin" , " <b>texto inserido com beforebegin </br>")
+    conteiner.insertAdjacentHTML("beforeend" , " <b>texto inserido com beforeend </br>")
+    conteiner.insertAdjacentHTML("afterend" , " <b>texto inserido com afterend </br>")
+
+        //insere somente textos
+        conteiner.insertAdjacentText("afterbegin"," <em> somente textos funcionam </em>" )
+
+        //insere elementos porém, antes deve cria-los
+        const elemento = document.createElement("h1")
+        elemento.textContent = "elemento"
+        conteiner.insertAdjacentElement("beforebegin", elemento)
+
+</script>
+</body>
+
+</html>

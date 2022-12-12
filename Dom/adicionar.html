@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar</title>
+</head>
+
+<body>
+    <h1>primeiro texto h1 </h1>
+    <p>texto 1 tag p</p>
+    <p>texto 2 tag p</p>
+    <p>texto 3 tag p</p>
+    <p>texto 4 tag p</p>
+
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+
+    <h1>segundo texto h1</h1>
+    <h3> texto h3 </h3>
+    <a href="#">link</a>
+</body>
+<script>
+    //seleciona o elemento que vai receber 
+    const ul = document.querySelector("ul")
+    //cria elemento novo
+    const adicionaAppendChild = document.createElement("li")
+    //coloca texto dentro do elemento
+    adicionaAppendChild.textContent = "Item adicionado"
+    //adiciona atributos no elemento
+    adicionaAppendChild.setAttribute("id", "novoLi")
+    //insere elemento no topo da ul (obs: appendChild no final )
+    ul.prepend(adicionaAppendChild)
+
+
+    const body = document.body
+
+    //inserir novo h1 antes da ul
+    const antesDaUl = document.createElement("h1")
+    antesDaUl.textContent = "novo h1 inserido"
+    //insere o novo elemento antes da ul no documento 
+    body.insertBefore(antesDaUl, ul)
+
+
+    //mover o segundo paragrafo para depois do h3
+    let p = document.querySelectorAll("p")[1]
+    const h3 = document.querySelector("h3")
+    //clonar o segundo paragrafo
+    p = p.cloneNode(true)
+    //iserir o clone no novo local
+    body.insertBefore(p, h3.nextElementSibling)
+
+    ul.after("novo texto inserido com after")//ou before que seria antes
+
+    const h4 = document.createElement("h4")
+    h4.textContent = "texto para befor"
+    antesDaUl.before(h4 , "mais textos com before")
+
+</script>
+
+</html>

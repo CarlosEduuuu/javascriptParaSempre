@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias porro accusantium ad eos dolorem, minus voluptate
+    nesciunt, aliquam adipisci delectus beatae, obcaecati molestias similique modi vitae nulla illo nemo cum.</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias porro accusantium ad eos dolorem, minus voluptate
+    nesciunt, aliquam adipisci delectus beatae, obcaecati molestias similique modi vitae nulla illo nemo cum.</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias porro accusantium ad eos dolorem, minus voluptate
+    nesciunt, aliquam adipisci delectus beatae, obcaecati molestias similique modi vitae nulla illo nemo cum.</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias porro accusantium ad eos dolorem, minus voluptate
+    nesciunt, aliquam adipisci delectus beatae, obcaecati molestias similique modi vitae nulla illo nemo cum.</p>
+
+<body>
+
+    <script>
+        //criar uma array
+        const arr = new Array(1, 2, 3)
+        console.log(arr)
+
+        //método from, faz uma cópia a partir do arr
+        const arr2 = Array.from(arr)
+        console.log(arr2)
+
+        //array of cria 
+        //cria um array com 3 posições vazias
+        const arr3 = new Array(3)
+        //cria uma array com uma posição com o numero 3 dentro
+        const arr4 = Array.of(3)
+        console.log(arr3)
+        console.log(arr4)
+
+
+        //Não funciona no IE
+        //const paragrafos = document.querySelectorAll("p")
+        // paragrafos.forEach(function (p, i) {
+        //     p.textContent = `${++i} - ${p.textContent}`
+        // })
+        // console.log(paragrafos)
+
+        //para funcionar em todos os browsers
+
+       let paragrafos2 = document.querySelectorAll("p")
+        paragrafos2 = Array.from(paragrafos2)
+
+        paragrafos2.map(function (p, i) {
+            p.textContent = `${++i} - ${p.textContent}`
+        })
+
+    </script>
+
+</body>
+
+</html>
